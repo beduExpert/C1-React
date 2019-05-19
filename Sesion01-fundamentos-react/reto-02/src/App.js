@@ -1,26 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// Como fue mencionado en el archivo index.js, esta línea siempre es necesaria
+// cuando un archivo contiene código de React
+import React from "react";
 
+// Este es un componente de React que regresa un `div` con una cadena de texto
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <div>Hola Mundo!</div>;
 }
 
+// Tenemos que exportar el componente para poder ser usado en cualquier otro
+// archivo de React
 export default App;
