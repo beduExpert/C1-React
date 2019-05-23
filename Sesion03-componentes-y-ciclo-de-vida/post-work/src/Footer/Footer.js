@@ -1,9 +1,10 @@
 import React from 'react'
+import './Footer.css'
 
 export default function Footer() {
   return (
     <>
-      <footer>
+      <footer className="Footer-component">
         <h5>
           <a href="mailto:mi@correo.com">Sigamos en contacto!</a>
         </h5>

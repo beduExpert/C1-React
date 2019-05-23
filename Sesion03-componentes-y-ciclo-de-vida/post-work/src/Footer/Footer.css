@@ -1,0 +1,10 @@
+.Footer-component {
+  width: 100vw;
+  background-color: blue;
+
+}
+
+.Footer-component > h5 > a {
+  color: #fff;
+  text-decoration: none
+}
