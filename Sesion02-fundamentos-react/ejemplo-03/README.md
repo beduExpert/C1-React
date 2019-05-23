@@ -26,3 +26,5 @@ El virtual DOM opera de la siguiente manera:
 - El DOM se actualiza con los únicos cambios que hayan ocurrido.
 
 Este proceso descrito es la `reconciliación`
+
+![virtual-dom](https://s3.amazonaws.com/media-p.slid.es/uploads/548779/images/2881381/vdom1.gif)

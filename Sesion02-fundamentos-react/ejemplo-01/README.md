@@ -1,4 +1,11 @@
+# Instrucciones:
+
+**Expliica los siguientes conceptos**
+
 ## ¿Qué es React?
+
+*Entra la documentación oficial de [reactjs](https://reactjs.org/)*
+
 
 React es una librería para crear intefaces de usuario.
 

@@ -23,7 +23,7 @@ El main puede ser:
 industria...</p>
 ```
 
-El header puede ser:
+El footer puede ser:
 
 ```html
 <h5><a href="mailto:mi@correo.com">Sigamos en contacto!</a></h5>
