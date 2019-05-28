@@ -1,0 +1,12 @@
+.Character {
+  cursor: pointer;
+  display: inline-block;
+  margin: 1em;
+  text-align: center;
+}
+
+.Character.Detail {
+  cursor: default;
+  display: grid;
+  grid-template-columns: 300px 200px;
+}
