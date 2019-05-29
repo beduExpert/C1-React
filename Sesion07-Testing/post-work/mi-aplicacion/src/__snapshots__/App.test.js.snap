@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The component render without crash 1`] = `ShallowWrapper {}`;
