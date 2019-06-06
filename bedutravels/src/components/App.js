@@ -8,17 +8,35 @@ import Nav from './Nav'
 import Signin from './Signin'
 import Venues from './Venues'
 
-const App = props => (
-  <>
-    <BrowserRouter>
-      <Nav />
-      <Route path="/" exact component={Home} />
-      <Route path="/login" component={Login} />
-      <Route path="/signin" component={Signin} />
-      <Route path="/venues" component={Venues} />
-      <Footer />
-    </BrowserRouter>
-  </>
-)
+import { URL } from '../constants'
+
+const App = props => {
+  const [state, setState] = React.useState([])
+  React.useEffect(() => {
+    fetch(URL)
+    .then(r => r.json())
+    .then(r => setState(r.data))
+  }, [])
+
+  return (
+    <>
+      <BrowserRouter>
+        <Route path="/" component={Nav} />
+        <Route
+          path="/"
+          exact
+          render={props => <Home data={state} {...props} />}
+        />
+        <Route path="/login" component={Login} />
+        <Route path="/signin" component={Signin} />
+        <Route
+          path="/venues"
+          render={props => <Venues data={state} {...props} />}
+        />
+        <Footer />
+      </BrowserRouter>
+    </>
+  )
+}
 
 export default App

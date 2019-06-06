@@ -6,7 +6,7 @@ import Main from './Main'
 const Home = props => (
   <>
     <Hero />
-    <Main />
+    <Main {...props} />
   </>
 )
 
