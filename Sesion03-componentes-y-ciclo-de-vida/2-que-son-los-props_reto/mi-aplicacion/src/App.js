@@ -9,14 +9,10 @@ import "./index.css";
 
 // Este es un componente de React que regresa un `div` con una cadena de texto
 function App() {
-  const destino = {
-    nombre: 'Costa Rica',
-    visitas: 420
-  }
   return (
     <>
       <Nav />
-      <Main nombre={destino.nombre} visitas={destino.visitas}/>
+      <Main />
       <Footer />
     </>
   );

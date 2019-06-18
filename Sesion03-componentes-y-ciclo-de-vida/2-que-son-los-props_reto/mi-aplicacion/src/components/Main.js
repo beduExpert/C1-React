@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const Main = props => {
-  return (
-    <>
-      <h2>Main</h2>
-      <h3>{props.nombre}</h3>
-      <h4>{props.visitas}</h4>
-    </>
-  );
+export default class Main extends Component {
+  render() {
+    const destino = {
+      nombre: "Costa Rica",
+      visitas: 420
+    };
+    return (
+      <>
+        <h2>Main</h2>
+        <h3>{destino.nombre}</h3>
+        <h4>{destino.visitas}</h4>
+      </>
+    )
+  }
 }
-
-export default Main;
