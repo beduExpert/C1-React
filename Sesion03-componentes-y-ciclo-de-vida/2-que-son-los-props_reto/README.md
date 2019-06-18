@@ -1,13 +1,12 @@
 ## Qué son los props (Reto)
 
-Modifica el código para que el componente App use otro componente dentro de sí
-mismo (por ejemplo `Titulo`) y se le pasen props a dicho componente por ejemplo
-un objeto:
+Modifica el código para que el componente Main pinte algún país, por ejemplo Puerto Rico y
+las visitas que ha tenido.
 
 ```js
 {
-  nombre: '', // Aquí tu nombre
-  edad: 0, // Aquí tu edad como número
+  nombre: '', // Aquíel Nombre del País
+  visitas: 0, // Aquíva el número de visita como número
 }
 ```
 
