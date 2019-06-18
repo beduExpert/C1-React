@@ -1,11 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Main extends Component {
-  render() {
-    return (
-      <h2>
-        Main
-      </h2>
-    )
-  }
+const Main = props => {
+  return (
+    <>
+      <h2>Main</h2>
+      <h3>{props.nombre}</h3>
+      <h4>{props.visitas}</h4>
+    </>
+  );
 }
+
+export default Main;

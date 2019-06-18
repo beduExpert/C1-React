@@ -1,6 +1,6 @@
 ## Qué son los props (Reto)
 
-Modifica el código para que el componente Main pinte algún país, por ejemplo Puerto Rico y
+Modifica el código para que el componente Main sea un componente funcional y pinte algún país, por ejemplo Puerto Rico y
 las visitas que ha tenido.
 
 ```js
