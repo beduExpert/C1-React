@@ -1,15 +1,29 @@
-import React from 'react'
+// Como fue mencionado en el archivo index.js, esta línea siempre es necesaria
+// cuando un archivo contiene código de React
+import React from 'react';
+import Nav from './components/Nav';
+import Main from './components/Main';
+import Footer from './components/Footer';
 
-class App extends React.Component {
-  state = {
-    data: []
-  }
+import "./index.css";
 
-  render() {
-    return (
-      <div>Aquí irá la información a desplegar</div>
-    )
-  }
+// Este es un componente de React que regresa un `div` con una cadena de texto
+function App() {
+  const destino = {
+    nombre: "Costa Rica",
+    visitas: 420
+  };
+
+  return (
+    <>
+      <Nav />
+      <Main nombre={destino.nombre}/>
+      <Main visitas={destino.visitas}/>
+      <Footer />
+    </>
+  );
 }
 
+// Tenemos que exportar el componente para poder ser usado en cualquier otro
+// archivo de React
 export default App;
