@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Nav />
-      <Main />
+      <Main nombre="Alemania"/>
       <Footer />
     </>
   );

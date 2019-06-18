@@ -1,7 +1,17 @@
 import React, { Component } from 'react'
 
 export default class Main extends Component {
+
+  componentDidMount() {
+    console.log("componentDidMount: ", this.props.nombre);
+  }
+
+  componentWillMount(){
+    console.log("componentWillMount: ", this.props.nombre);
+  }
+
   render() {
+    console.log("render: ", this.props.nombre);
     const destino = {
       nombre: "Costa Rica",
       visitas: 420
