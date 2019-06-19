@@ -4,7 +4,6 @@ import React , { Component } from 'react';
 import Nav from './components/Nav';
 import Main from './components/Main';
 import Footer from './components/Footer';
-import Card from './components/Card';
 
 import "./index.css";
 
@@ -19,7 +18,7 @@ class App extends Component {
       <>
         <Nav />
         <Main />
-        <Card />
+        <div>Aquí va la información a desplegar</div>
         <Footer />
       </>
     );
