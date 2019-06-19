@@ -5,6 +5,7 @@ const Card = props => {
     <div>
       <img src={props.imagen} alt={props.title} />
       <p>{props.title}</p>
+      <p>{props.price}</p>
     </div>
   );
 }

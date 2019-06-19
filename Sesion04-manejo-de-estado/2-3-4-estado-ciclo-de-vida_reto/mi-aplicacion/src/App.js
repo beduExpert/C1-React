@@ -4,6 +4,9 @@ import React , { Component } from 'react';
 import Nav from './components/Nav';
 import Main from './components/Main';
 import Footer from './components/Footer';
+import Card from './components/Card';
+
+import axios from 'axios';
 
 import "./index.css";
 
@@ -12,13 +15,34 @@ class App extends Component {
     data: []
   };
 
+  componentDidMount() {
+    this.fetchLocations()
+  }
+
+  async fetchLocations() {
+     try {
+       // const res = await axios.get(`https://rickandmortyapi.com/api/character/${random}/`)
+       const res = await axios.get(
+         "https://bedu-travels-node.herokuapp.com/tours"
+       );
+       console.log('data: ', res.data)
+       this.setState({ data: res.data.data});
+     } catch (err) {
+       console.log(err);
+     }
+  }
+
   render() {
     // Este es un componente de React que regresa un `div` con una cadena de texto
     return (
       <>
         <Nav />
         <Main />
-        <div>Aquí va la información a desplegar</div>
+        {this.state.data.map(d => {
+          return (
+            <Card key={d.id} image={d.featuredThumbnail} title={d.title} price={d.price}/>
+          );
+        })}
         <Footer />
       </>
     );
