@@ -4,7 +4,6 @@ import React , { Component } from 'react';
 import Nav from './components/Nav';
 import Main from './components/Main';
 import Footer from './components/Footer';
-import Card from './components/Card';
 
 import axios from 'axios';
 
@@ -37,12 +36,7 @@ class App extends Component {
     return (
       <>
         <Nav />
-        <Main />
-        {this.state.data.map(d => {
-          return (
-            <Card key={d.id} image={d.featuredThumbnail} title={d.title} price={d.price}/>
-          );
-        })}
+        <Main data={this.state.data} {...this.props}/>
         <Footer />
       </>
     );

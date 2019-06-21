@@ -1,16 +1,31 @@
 import React from 'react'
+import Card from './Card';
 
 const Main = props => {
-  const style = {
-    color: 'red'
-  }
   return (
-    <>
-      <h2>Main</h2>
-      <h3 style={{ color: style.color }}>{props.nombre}</h3>
-      <h4>{props.visitas}</h4>
-    </>
-  )
+    <section className="text-center margin-top-lg">
+      <p className="margin-bottom-sm title-font text-shadow">
+        Destinos preferidos
+      </p>
+      <p className="margin-bottom-md subtitle-font text-shadow">
+        Mira nuestros destinos favoritos alrededor del mundo
+      </p>
+      <div className="top-country-container">
+        <section className="top-country-gridarea">
+          {props.data.map(d => {
+            return (
+              <Card
+                key={d.id}
+                image={d.featuredThumbnail}
+                title={d.title}
+                price={d.price}
+              />
+            );
+          })}
+        </section>
+      </div>
+    </section>
+  );
 }
 
 export default Main;
