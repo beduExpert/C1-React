@@ -1,7 +1,7 @@
 // Como fue mencionado en el archivo index.js, esta línea siempre es necesaria
 // cuando un archivo contiene código de React
 import React from 'react';
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import axios from 'axios';
 
 import Menu from './components/Menu';
@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 
 
 import "./index.css";
+import NotFound from './components/NotFound';
 
 const App = props => {
   const [state, setState] = React.useState([])
@@ -31,14 +32,17 @@ const App = props => {
       {/* <Main data={state} {...props} /> */}
       <BrowserRouter>
         <Route path="/" component={Menu} />
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
-        <Route
-          path="/"
-          exact
-          render={props => <Main data={state} {...props} />}
-        />
-        <Footer />
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+          <Route
+            path="/"
+            exact
+            render={props => <Main data={state} {...props} />}
+          />
+          <Route component={NotFound} />
+          <Footer />
+        </Switch>
       </BrowserRouter>
     </>
   );
