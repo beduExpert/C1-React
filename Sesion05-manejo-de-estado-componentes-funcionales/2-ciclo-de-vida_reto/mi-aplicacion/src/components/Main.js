@@ -15,7 +15,7 @@ const Main = props => {
           {props.data.map(d => {
             return (
               <Card
-                key={d.id}
+                key={d._id}
                 image={d.featuredThumbnail}
                 title={d.title}
                 price={d.price}
