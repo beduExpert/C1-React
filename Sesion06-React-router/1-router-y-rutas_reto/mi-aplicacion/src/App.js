@@ -6,6 +6,7 @@ import axios from 'axios';
 
 import Menu from './components/Menu';
 import Login from './components/Login';
+import Signup from './components/Signup';
 import Main from './components/Main';
 import Footer from './components/Footer';
 
@@ -31,6 +32,7 @@ const App = props => {
       <BrowserRouter>
         <Route path="/" component={Menu} />
         <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
         <Route
           path="/"
           exact

@@ -11,7 +11,7 @@ const Menu = props => {
       </Link>
       <div>
         <Link to="/login">LogIn</Link>
-        <Link to="/signin">SignIn</Link>
+        <Link to="/signup">Signup</Link>
       </div>
     </nav>
   );
