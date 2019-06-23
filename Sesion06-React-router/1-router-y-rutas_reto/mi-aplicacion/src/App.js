@@ -5,6 +5,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import axios from 'axios';
 
 import Menu from './components/Menu';
+import Login from './components/Login';
 import Main from './components/Main';
 import Footer from './components/Footer';
 
@@ -28,8 +29,8 @@ const App = props => {
     <>
       {/* <Main data={state} {...props} /> */}
       <BrowserRouter>
-        <Menu />
-        {/* <Route path="/" component={Menu} /> */}
+        <Route path="/" component={Menu} />
+        <Route path="/login" component={Login} />
         <Route
           path="/"
           exact
