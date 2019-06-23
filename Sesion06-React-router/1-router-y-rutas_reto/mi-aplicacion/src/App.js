@@ -1,11 +1,13 @@
 // Como fue mencionado en el archivo index.js, esta línea siempre es necesaria
 // cuando un archivo contiene código de React
 import React from 'react';
-import Nav from './components/Nav';
+import { BrowserRouter, Route } from "react-router-dom";
+import axios from 'axios';
+
+import Menu from './components/Menu';
 import Main from './components/Main';
 import Footer from './components/Footer';
 
-import axios from 'axios';
 
 import "./index.css";
 
@@ -24,11 +26,19 @@ const App = props => {
   }, []);
   return (
     <>
-      <Nav />
-      <Main data={state} {...props}/>
-      <Footer />
+      {/* <Main data={state} {...props} /> */}
+      <BrowserRouter>
+        <Menu />
+        {/* <Route path="/" component={Menu} /> */}
+        <Route
+          path="/"
+          exact
+          render={props => <Main data={state} {...props} />}
+        />
+        <Footer />
+      </BrowserRouter>
     </>
-    );
+  );
 }
 
 // Tenemos que exportar el componente para poder ser usado en cualquier otro
