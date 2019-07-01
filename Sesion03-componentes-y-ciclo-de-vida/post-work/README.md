@@ -7,6 +7,8 @@ sesión.
 
 ## Instrucciones
 
+- Con base en tu proyecto crea los componentes `Header`, `Main` y `Footer`
+
 - Haz que el componente `App` use los componentes `Header`, `Main` y `Footer`
 
 - Haz que los componentes `Header`, `Main` y `Footer` sean funcionales y ponles

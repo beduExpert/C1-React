@@ -1,4 +1,7 @@
 ## Componentes de tipo Clase (Reto)
 
-Modifica el código para que el componente App pinte en el navegador una etiqueta
-tipo h1 y que tenga por texto `Mi primer componente de React`
+Crea una carpeta a la altura de `src` llamada `components` y crea 3 componentes de Clase.
+
+1. `Nav.js`
+2. `Main.js`
+3. `Footer.js`

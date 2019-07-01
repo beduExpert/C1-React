@@ -7,8 +7,7 @@ sesión.
 
 ## Instrucciones
 
-- Haz que el componente `App` traiga información de los personajes de Rick and
-  Morty
+- Haz que el componente `App` traiga información necesaria para tu proyecto (si no cuentas con ella, utiliza  el API de los personajes de Rick and Morty)
 
-- Haz que el componente `Main` pinte los personajes con un componente que se
+- Haz que el componente `Main` pinte la información con un componente que se
   llame Card

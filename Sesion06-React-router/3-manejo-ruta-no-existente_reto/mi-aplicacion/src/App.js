@@ -1,94 +1,53 @@
+// Como fue mencionado en el archivo index.js, esta línea siempre es necesaria
+// cuando un archivo contiene código de React
 import React from 'react';
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import axios from 'axios';
 
-// Función que arroja un número semialeatorio entre el 1 y el 1000
-const random = () => Math.floor(Math.random() * (1000 - 1)) + 1;
+import Menu from './components/Menu';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import Main from './components/Main';
+import Footer from './components/Footer';
 
-// Estos componentes deberían estar en su propio archivo, pero para simplificar
-// los pondemos aquí
-const Dashboard = props => {
-  const randomNumbers = [
-    random(),
-    random(),
-    random(),
-    random(),
-    random(),
-    random(),
-    random(),
-    random(),
-    random(),
-    random(),
-  ]
 
-  return randomNumbers.map((e, i) => {
-    return (
-      <div key={i}>
-        <Link to={`/carrito/${e}`}>Carro de compras # {e}</Link>
-        <br />
-      </div>
-    )
-  })
-}
-const CarritoDeCompras = props => {
-  const r = random()
-  const s = random()
+import "./index.css";
+import NotFound from './components/NotFound';
 
-  return (
-    <p>Carrito de compras #{props.match.params.id} que podemos procesar ya para
-      el pago <Link to={{pathname: `/orden/${r}`, amount: s}}>aquí</Link>.</p>
-  )
-}
-const OrdenDeCompra = props => {
-  // Aquí debemos de seleccionar si existe la información en la ruta, sino obtenerla
-  const amount = props.location.amount || random()
+const App = props => {
+  const [state, setState] = React.useState([])
 
-  const [message, setMessage] = React.useState('Pagar')
+  React.useEffect(() => {
+    const fetchLocations = async () => {
+      const res = await axios.get(
+        'https://bedu-travels-node.herokuapp.com/tours',
+      );
+      setState(res.data.data);
+    };
 
+    fetchLocations();
+  }, []);
   return (
     <>
-      <p>
-        Orden de compra #{props.match.params.id} que podemos procesar ya para el
-          pago que es de ${amount}.00 pesos.
-      </p>
-      <button
-        onClick={() => {
-          setMessage('pagando...')
-          setTimeout(() => props.history.push('/'), 800)
-        }}
-      >
-          {message}
-      </button>
+      {/* <Main data={state} {...props} /> */}
+      <BrowserRouter>
+        <Route path="/" component={Menu} />
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+          <Route
+            path="/"
+            exact
+            render={props => <Main data={state} {...props} />}
+          />
+          <Route component={NotFound} />
+          <Footer />
+        </Switch>
+      </BrowserRouter>
     </>
-  )
-}
-const Menu = props =>
-  <nav>
-    <ul>
-      <li>
-        <Link to="/">Inicio</Link>
-      </li>
-    </ul>
-  </nav>
-
-function NoExistente(props) {
-  return (
-    <p>La ruta: {props.location.pathname} no existe en esta aplicación</p>
-  )
+  );
 }
 
-function App(props) {
-  return (
-    <BrowserRouter>
-      <Menu />
-      <Switch>
-        <Route path="/" exact component={Dashboard} />
-        <Route path="/carrito/:id" component={CarritoDeCompras} />
-        <Route path="/orden/:id" component={OrdenDeCompra} />
-        <Route path="/" exact component={Dashboard} />
-        <Route component={NoExistente} />
-      </Switch>
-    </BrowserRouter>
-  )
-}
-
+// Tenemos que exportar el componente para poder ser usado en cualquier otro
+// archivo de Reat
 export default App;

@@ -1,42 +1,49 @@
-import React from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+// Como fue mencionado en el archivo index.js, esta línea siempre es necesaria
+// cuando un archivo contiene código de React
+import React from 'react';
+import { BrowserRouter, Route } from "react-router-dom";
+import axios from 'axios';
 
-import Display from './Display'
-import Input from './Input'
-import Menu from './Menu'
+import Menu from './components/Menu';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import Main from './components/Main';
+import Footer from './components/Footer';
 
-const Root = props => <p>Bienvenido, aquí podrás agregar mensajes que persistirán
-  en la aplicación mientras no recargues la página</p>
 
-function App(props) {
-  const [messages, storeMessage] = React.useState([])
+import "./index.css";
 
+const App = props => {
+  const [state, setState] = React.useState([])
+
+  React.useEffect(() => {
+    const fetchLocations = async () => {
+      const res = await axios.get(
+        'https://bedu-travels-node.herokuapp.com/tours',
+      );
+      setState(res.data.data);
+    };
+
+    fetchLocations();
+  }, []);
   return (
-    <BrowserRouter>
-      <Menu />
-      <Route path="/" exact component={Root} />
-      <Route
-        path="/display"
-        render={
-          props =>
-            <Display
-              {...props}
-              messages={messages}
-            />
-        }
-      />
-      <Route
-        path="/input"
-        render={
-          props =>
-            <Input
-              {...props}
-              storeMessage={message => storeMessage(messages.concat(message))}
-            />
-        }
-      />
-    </BrowserRouter>
-  )
+    <>
+      {/* <Main data={state} {...props} /> */}
+      <BrowserRouter>
+        <Route path="/" component={Menu} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
+        <Route
+          path="/"
+          exact
+          render={props => <Main data={state} {...props} />}
+        />
+        <Footer />
+      </BrowserRouter>
+    </>
+  );
 }
 
+// Tenemos que exportar el componente para poder ser usado en cualquier otro
+// archivo de Reat
 export default App;
