@@ -1,24 +1,21 @@
-# Instrucciones:
+## Inicializar una aplicación de React
 
-**Expliica los siguientes conceptos**
+```sh
+$ npx create-react-app nombre # dónde nombre es nuestra aplicación
+```
 
-## ¿Qué es React?
+La información brindada en la consola una vez que se inicializó la aplicación es
+clara.
 
-*Entra la documentación oficial de [reactjs](https://reactjs.org/)*
+- Cambiarse a la nueva carpeta (la que tiene el proyecto)
+- Inicializar el servidor de desarrollo
 
+```sh
+$ cd nombre # aquí nombre cambia respectivamente
+$ npm start
+```
 
-React es una librería para crear intefaces de usuario.
+A lo largo del código comentaremos para qué sirve cada una de las cosas
 
-React usa componentes, está pensada para ser explícita o declarativa y puede ser
-usada en múltiples entornos.
-
-## ¿Por qué surge?
-
-Como respuesta a nueva forma de declarar interfaces de usuario. En React no
-necesitas ver como cambia la información para después desplegarla, React lo hace
-por uno.
-
-## ¿Qué diferencias hay con otras librerías o frameworks?
-
-React no regresa un string o un nodo de DOM, sino una descripción muy ligera de
-cómo debe de verse el DOM. Este proceso se llama reconciliación.
+Se instalará también React Developer Tools (Chrome y Firefox) para ayudar en el
+desarrollo
