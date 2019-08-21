@@ -5,7 +5,7 @@ const Card = props => {
     <div>
       <img src={props.image} alt={props.title} />
       <p>{props.title}</p>
-      <p>{props.price}</p>
+      <p>{props.price} $</p>
     </div>
   );
 }

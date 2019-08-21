@@ -17,7 +17,7 @@ const Card = props => (
           <tbody>
             <tr>
               <th>Starts/Ends </th>
-              <td>{props.travel.fromCityId}/{props.travel.toCityId}</td>
+              <td>Marruecos/México</td>
             </tr>
             <tr>
               <th>Operator</th>
