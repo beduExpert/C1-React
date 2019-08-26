@@ -3,6 +3,7 @@ import Header from './Header/Header';
 import Main from './Main/Main';
 import Footer from './Footer/Footer';
 import Card from './Main/Card/Card';
+import fakeData from "./db/data.json";
 
 class App extends React.Component {
   state = {
@@ -10,9 +11,11 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    fetch("https://rickandmortyapi.com/api/character/")
-      .then(r => r.json())
-      .then(r => this.setState((state, props) => ({ data: r.results })));
+    // this.setState({
+    //   data: fakeData
+    // })
+    this.setState((state, props) => ({ data: fakeData }))
+    console.log('sate', this.state);
     }
     
     render() {
@@ -28,7 +31,8 @@ class App extends React.Component {
                     key={card.id}
                     image={card.image}
                     name={card.name}
-                    specie={card.specie}
+                    username={card.username}
+                    email={card.email}
                   />
                 );
               })

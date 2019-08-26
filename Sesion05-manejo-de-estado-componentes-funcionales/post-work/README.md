@@ -1,4 +1,4 @@
-# Post work: El consumo del API de Rick and Morty, que todos sus componentes
+# Post work: El consumo del mock data, que todos sus componentes
 sean funcionales y se siga mantienendo la misma funcionalidad
 
 Bienvenido al post work te felicitamos por llegar a este nivel de la sesión, en
@@ -7,6 +7,6 @@ sesión.
 
 ## Instrucciones
 
-- El consumo del API de Rick and Morty se hizo con un componente de tipo clase,
+- El consumo del mock data se hizo con un componente de tipo clase,
   el reto es hacerlo con un componente funcional, manteniendo la misma
   funcionalidad

@@ -36,7 +36,7 @@ function Character(props) {
       continue
     }
 
-    if (prop === 'name' || prop === 'species') {
+    if (prop === 'name' || prop === 'username') {
       items.push(e)
     }
   }

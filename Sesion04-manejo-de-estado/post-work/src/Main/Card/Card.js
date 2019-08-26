@@ -6,7 +6,8 @@ export default function Card(props) {
     <div className="Card">
       <img src={props.image} alt={props.name}/>
       <h1>{props.name}</h1>
-      <p>{props.specie}</p>
+      <p> Username: {props.username}</p>
+      <p>Email: {props.email}</p>
     </div>
   )
 }

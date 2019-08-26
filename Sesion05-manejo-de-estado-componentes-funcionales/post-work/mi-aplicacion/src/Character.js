@@ -7,7 +7,8 @@ function Character(props) {
     <div className="Character">
       <img src={props.image} alt={props.name} />
       <p>{props.name}</p>
-      <p>{props.specie}</p>
+      <p>Username: {props.username}</p>
+      <p>Email: {props.email}</p>
     </div>
   )
 }
