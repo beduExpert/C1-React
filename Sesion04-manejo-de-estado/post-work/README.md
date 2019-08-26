@@ -7,7 +7,7 @@ sesión.
 
 ## Instrucciones
 
-- Haz que el componente `App` traiga información necesaria para tu proyecto (si no cuentas con ella, utiliza  el API de los personajes de Rick and Morty)
+- Haz que el componente `App` traiga información necesaria para tu proyecto (si no cuentas con ella, en éste mismo proyecto te dejamos un mock de data con 10 usuarios)
 
 - Haz que el componente `Main` pinte la información con un componente que se
   llame Card
